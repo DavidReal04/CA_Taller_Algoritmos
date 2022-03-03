@@ -10,18 +10,17 @@ public class ManejoArreglos {
          arreglo = new ArrayList<>();
     }
 
-    public void generarArreglo(int cantDatos, String caso){
+    public void generarArreglo(int cantDatos, int caso){
         arreglo.clear();
-        if(caso.equals("Mejor")){
+        if(caso==1){
             for (int i = 0; i < cantDatos; i++) {
                 arreglo.add(i, i);
             }
-        }else if(caso.equals("Medio")){
+        }else if(caso==2){
             for (int i = 0; i < cantDatos; i++) {
                 arreglo.add((int) (Math.random()*cantDatos));
             }
-
-        }else if(caso.equals("Peor")){
+        }else if(caso==3){
             for (int i = 0; i < cantDatos; i++) {
                 arreglo.add(cantDatos-i, i);
             }

@@ -18,4 +18,10 @@ public class ViewConsola {
         dato = leer.nextInt();
         return dato;
     }
+    public int leerNum(String mensaje) {
+        System.out.println(mensaje);
+        int dato = 0;
+        dato = leer.nextInt();
+        return dato;
+    }
 }
