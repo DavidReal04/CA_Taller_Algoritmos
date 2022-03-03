@@ -57,11 +57,8 @@ public class Controller {
 				default:
 					throw new InputMismatchException();
 			}
-
 		} catch (InputMismatchException e) {
 			vista.mostrarMensaje("Ingrese una opción válida");
 		}
-
-
 	}
 }

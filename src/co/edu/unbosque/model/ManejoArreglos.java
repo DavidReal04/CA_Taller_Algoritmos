@@ -4,34 +4,34 @@ import java.util.ArrayList;
 
 public class ManejoArreglos {
 
-    private ArrayList<Integer> arreglo;
+    private int[] arreglo;
 
     public ManejoArreglos() {
-         arreglo = new ArrayList<>();
+
     }
 
     public void generarArreglo(int cantDatos, int caso){
-        arreglo.clear();
+        arreglo = new int[cantDatos];
         if(caso==1){
             for (int i = 0; i < cantDatos; i++) {
-                arreglo.add(i, i);
+                arreglo[i]=i;
             }
         }else if(caso==2){
             for (int i = 0; i < cantDatos; i++) {
-                arreglo.add((int) (Math.random()*cantDatos));
+                arreglo[i]=(int) (Math.random()*cantDatos);
             }
         }else if(caso==3){
             for (int i = 0; i < cantDatos; i++) {
-                arreglo.add(cantDatos-i, i);
+                arreglo[i]=cantDatos-i;
             }
         }
     }
 
-    public ArrayList<Integer> getArreglo() {
+    public int[] getArreglo() {
         return arreglo;
     }
 
-    public void setArreglo(ArrayList<Integer> arreglo) {
+    public void setArreglo(int[] arreglo) {
         this.arreglo = arreglo;
     }
 }
