@@ -1,6 +1,7 @@
 package co.edu.unbosque.controller;
 
 import co.edu.unbosque.model.ManejoArreglos;
+import co.edu.unbosque.model.QuickSort;
 import co.edu.unbosque.view.ViewConsola;
 
 import java.util.InputMismatchException;
@@ -8,10 +9,14 @@ import java.util.InputMismatchException;
 public class Controller {
 
 	private ManejoArreglos manArrays;
+	private QuickSort quickSort;
 	private ViewConsola vista;
+	private long tiempoInicial;
+	private long tiempoFinal;
 
 	public Controller() {
 		manArrays = new ManejoArreglos();
+		quickSort = new QuickSort();
 		vista = new ViewConsola();
 		funcionar();
 	}
@@ -49,7 +54,12 @@ public class Controller {
 
 					break;
 				case 3:
-
+					vista.mostrarMensaje("Empieza el ordenamiento");
+					int[] arreglo = manArrays.getArreglo();
+					tiempoInicial=System.currentTimeMillis();
+					quickSort.ordenar(arreglo, 0,arreglo.length-1);
+					tiempoFinal=System.currentTimeMillis();
+					vista.mostrarMensaje("Fin del ordenamiento\nTiempo tomado: "+(tiempoFinal-tiempoInicial));
 					break;
 				case 4:
 

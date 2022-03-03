@@ -1,7 +1,5 @@
 package co.edu.unbosque.model;
 
-import java.util.ArrayList;
-
 public class ManejoArreglos {
 
     private int[] arreglo;
@@ -14,7 +12,7 @@ public class ManejoArreglos {
         arreglo = new int[cantDatos];
         if(caso==1){
             for (int i = 0; i < cantDatos; i++) {
-                arreglo[i]=i;
+                arreglo[i]=i+1;
             }
         }else if(caso==2){
             for (int i = 0; i < cantDatos; i++) {
