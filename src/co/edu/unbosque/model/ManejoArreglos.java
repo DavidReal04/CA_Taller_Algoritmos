@@ -2,14 +2,14 @@ package co.edu.unbosque.model;
 
 public class ManejoArreglos {
 
-    private int[] arreglo;
+    private long[] arreglo;
 
     public ManejoArreglos() {
 
     }
 
     public void generarArreglo(int cantDatos, int caso){
-        arreglo = new int[cantDatos];
+        arreglo = new long[cantDatos];
         if(caso==1){
             for (int i = 0; i < cantDatos; i++) {
                 arreglo[i]=i+1;
@@ -25,11 +25,11 @@ public class ManejoArreglos {
         }
     }
 
-    public int[] getArreglo() {
+    public long[] getArreglo() {
         return arreglo;
     }
 
-    public void setArreglo(int[] arreglo) {
+    public void setArreglo(long[] arreglo) {
         this.arreglo = arreglo;
     }
 }

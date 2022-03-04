@@ -5,7 +5,7 @@ public class QuickSort {
     public QuickSort() {
     }
 
-    public void ordenar(int[] arreglo, int izq, int der){
+    public void ordenar(long[] arreglo, int izq, int der){
         if(izq<der){
             int numPivot = pivote(arreglo,izq,der);
             ordenar(arreglo,izq,numPivot);
@@ -13,8 +13,8 @@ public class QuickSort {
         }
     }
 
-    public int pivote(int[] arreglo, int izq, int der){
-        int pivot = arreglo[izq];
+    public int pivote(long[] arreglo, int izq, int der){
+        long pivot = arreglo[izq];
         while (true){
             while (arreglo[izq] < pivot){
                 izq++;

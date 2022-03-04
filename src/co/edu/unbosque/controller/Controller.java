@@ -1,7 +1,6 @@
 package co.edu.unbosque.controller;
 
-import co.edu.unbosque.model.ManejoArreglos;
-import co.edu.unbosque.model.QuickSort;
+import co.edu.unbosque.model.*;
 import co.edu.unbosque.view.ViewConsola;
 
 import java.util.InputMismatchException;
@@ -10,13 +9,19 @@ public class Controller {
 
 	private ManejoArreglos manArrays;
 	private QuickSort quickSort;
+	private Burbuja burbuja;
+	private Radix radix;
+	private Shell shell;
 	private ViewConsola vista;
 	private long tiempoInicial;
 	private long tiempoFinal;
 
 	public Controller() {
-		manArrays = new ManejoArreglos();
+		shell=new Shell();
+		radix=new Radix();
+		burbuja = new Burbuja();
 		quickSort = new QuickSort();
+		manArrays = new ManejoArreglos();
 		vista = new ViewConsola();
 		funcionar();
 	}
@@ -48,21 +53,37 @@ public class Controller {
 			}
 			switch (algoritmo) {
 				case 1:
-
+					vista.mostrarMensaje("Empieza el ordenamiento...");
+					long[] arreglo1= manArrays.getArreglo();
+					tiempoInicial=System.currentTimeMillis();
+					burbuja.ordenar(arreglo1);
+					tiempoFinal=System.currentTimeMillis();
+					vista.mostrarMensaje("Fin del ordenamiento\nTiempo tomado: "+(tiempoFinal-tiempoInicial));
 					break;
 				case 2:
+					vista.mostrarMensaje("Empieza el ordenamiento...");
+					long[] arreglo2= manArrays.getArreglo();
+					tiempoInicial=System.currentTimeMillis();
+					//
+					tiempoFinal=System.currentTimeMillis();
+					vista.mostrarMensaje("Fin del ordenamiento\nTiempo tomado: "+(tiempoFinal-tiempoInicial));
 
 					break;
 				case 3:
-					vista.mostrarMensaje("Empieza el ordenamiento");
-					int[] arreglo = manArrays.getArreglo();
+					vista.mostrarMensaje("Empieza el ordenamiento...");
+					long[] arreglo3 = manArrays.getArreglo();
 					tiempoInicial=System.currentTimeMillis();
-					quickSort.ordenar(arreglo, 0,arreglo.length-1);
+					quickSort.ordenar(arreglo3, 0,arreglo3.length-1);
 					tiempoFinal=System.currentTimeMillis();
 					vista.mostrarMensaje("Fin del ordenamiento\nTiempo tomado: "+(tiempoFinal-tiempoInicial));
 					break;
 				case 4:
-
+					vista.mostrarMensaje("Empieza el ordenamiento...");
+					long[] arreglo4= manArrays.getArreglo();
+					tiempoInicial=System.currentTimeMillis();
+					shell.ordenar(arreglo4);
+					tiempoFinal=System.currentTimeMillis();
+					vista.mostrarMensaje("Fin del ordenamiento\nTiempo tomado: "+(tiempoFinal-tiempoInicial));
 					break;
 				default:
 					throw new InputMismatchException();
