@@ -12,7 +12,7 @@ public class ManejoArreglos {
         arreglo = new long[cantDatos];
         if(caso==1){
             for (int i = 0; i < cantDatos; i++) {
-                arreglo[i]=i+1;
+                arreglo[i]=cantDatos-i;
             }
         }else if(caso==2){
             for (int i = 0; i < cantDatos; i++) {
@@ -20,7 +20,7 @@ public class ManejoArreglos {
             }
         }else if(caso==3){
             for (int i = 0; i < cantDatos; i++) {
-                arreglo[i]=cantDatos-i;
+                arreglo[i]=i+1;
             }
         }
     }

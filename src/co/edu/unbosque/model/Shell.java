@@ -13,7 +13,7 @@ public class Shell {
             while(cambio){
                 cambio=false;
                 for(i=salto; i<arreglo.length;i++){
-                    if(arreglo[i-salto]>arreglo[i]){
+                    if(arreglo[i-salto]<arreglo[i]){
                         temp=arreglo[i];
                         arreglo[i]=arreglo[i-salto];
                         arreglo[i-salto]=temp;
