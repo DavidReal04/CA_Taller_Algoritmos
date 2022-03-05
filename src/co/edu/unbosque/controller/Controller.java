@@ -65,11 +65,10 @@ public class Controller {
 				case 2:
 					vista.mostrarMensaje("Empieza el ordenamiento...");
 					long[] arreglo2= manArrays.getArreglo();
-					tiempoInicial=System.currentTimeMillis();
-					//
-					tiempoFinal=System.currentTimeMillis();
+					tiempoInicial=System.nanoTime();
+					radix.ordenar(arreglo2, arreglo2.length);
+					tiempoFinal=System.nanoTime();
 					vista.mostrarMensaje("Fin del ordenamiento\nTiempo tomado: "+(tiempoFinal-tiempoInicial));
-
 					break;
 				case 3:
 					vista.mostrarMensaje("Empieza el ordenamiento...");
@@ -77,7 +76,7 @@ public class Controller {
 					tiempoInicial=System.nanoTime();
 					quickSort.ordenar(arreglo3, 0,arreglo3.length-1);
 					tiempoFinal=System.nanoTime();
-					vista.mostrarMensaje("Fin del ordenamiento\nTiempo tomado: "+ TimeUnit.NANOSECONDS.toMillis(tiempoFinal-tiempoInicial));
+					vista.mostrarMensaje("Fin del ordenamiento\nTiempo tomado: "+ (tiempoFinal-tiempoInicial));
 					vista.mostrarMensaje(""+arreglo3[arreglo3.length-1]);
 					break;
 				case 4:
