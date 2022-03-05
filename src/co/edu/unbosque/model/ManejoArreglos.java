@@ -19,6 +19,7 @@ public class ManejoArreglos {
                 arreglo[i]=(int) (Math.random()*cantDatos);
             }
         }else if(caso==3){
+
             for (int i = 0; i < cantDatos; i++) {
                 arreglo[i]=i+1;
             }

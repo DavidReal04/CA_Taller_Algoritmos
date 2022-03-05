@@ -6,31 +6,27 @@ public class QuickSort {
     }
 
     public void ordenar(long[] arreglo, int izq, int der){
-        if(izq<der){
-            int numPivot = pivote(arreglo,izq,der);
-            ordenar(arreglo,izq,numPivot);
-            ordenar(arreglo,numPivot+1,der);
-        }
-    }
-
-    public int pivote(long[] arreglo, int izq, int der){
-        long pivot = arreglo[izq];
-        while (true){
-            while (arreglo[izq] < pivot){
-                izq++;
-            }
-            while (arreglo[der] > pivot){
-                der--;
-            }
-            if (izq>=der){
-                return der;
-            }else{
-                arreglo[izq]=arreglo[izq]+arreglo[der];
-                arreglo[der]=arreglo[izq]-arreglo[der];
-                arreglo[izq]=arreglo[izq]-arreglo[der];
-                izq++;
-                der--;
+        long mitad = arreglo[(izq+der)/2];
+        long aux;
+        int inf=izq;
+        int sup=der;
+        do{
+            while(arreglo[inf]>mitad && inf<der)
+                inf++;
+            while(arreglo[sup]<mitad && sup>izq)
+                sup--;
+            if(inf<=sup){
+                aux=arreglo[inf];
+                arreglo[inf]=arreglo[sup];
+                arreglo[sup]=aux;
+                inf++;
+                sup--;
             }
         }
+        while(inf<=sup);
+        if(izq<sup)
+            ordenar(arreglo,izq,sup);
+        if(inf<der)
+            ordenar(arreglo,inf,der);
     }
 }
