@@ -3,9 +3,7 @@ package co.edu.unbosque.controller;
 import co.edu.unbosque.model.*;
 import co.edu.unbosque.view.ViewConsola;
 
-import java.util.Arrays;
 import java.util.InputMismatchException;
-import java.util.concurrent.TimeUnit;
 
 public class Controller {
 
@@ -57,9 +55,9 @@ public class Controller {
 				case 1:
 					vista.mostrarMensaje("Empieza el ordenamiento...");
 					long[] arreglo1= manArrays.getArreglo();
-					tiempoInicial=System.currentTimeMillis();
+					tiempoInicial=System.nanoTime();
 					burbuja.ordenar(arreglo1);
-					tiempoFinal=System.currentTimeMillis();
+					tiempoFinal=System.nanoTime();
 					vista.mostrarMensaje("Fin del ordenamiento\nTiempo tomado: "+(tiempoFinal-tiempoInicial));
 					break;
 				case 2:
@@ -82,9 +80,9 @@ public class Controller {
 				case 4:
 					vista.mostrarMensaje("Empieza el ordenamiento...");
 					long[] arreglo4= manArrays.getArreglo();
-					tiempoInicial=System.currentTimeMillis();
+					tiempoInicial=System.nanoTime();
 					shell.ordenar(arreglo4);
-					tiempoFinal=System.currentTimeMillis();
+					tiempoFinal=System.nanoTime();
 					vista.mostrarMensaje("Fin del ordenamiento\nTiempo tomado: "+(tiempoFinal-tiempoInicial));
 					break;
 				default:
