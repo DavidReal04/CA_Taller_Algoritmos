@@ -2,20 +2,51 @@ package co.edu.unbosque.controller;
 
 import co.edu.unbosque.model.*;
 import co.edu.unbosque.view.ViewConsola;
-
 import java.util.InputMismatchException;
 
+/**
+ * Clase Controller, consta del método constructor y de un método funcionar
+ * Relaciona las clases del paquete model con las clases del paquete view y controla las interacciones entre ellas
+ * @author David Real
+ * @author Yilber Rojas
+ */
 public class Controller {
-
+	/**
+	 * Objeto de ManejoArreglos que permite llamar a sus métodos y sus atributos
+	 */
 	private ManejoArreglos manArrays;
+	/**
+	 * Objeto de QuickSort que permite llamar a sus métodos y sus atributos
+	 */
 	private QuickSort quickSort;
+	/**
+	 * Objeto de Burbuja que permite llamar a sus métodos y sus atributos
+	 */
 	private Burbuja burbuja;
+	/**
+	 * Objeto de Radix que permite llamar a sus métodos y sus atributos
+	 */
 	private Radix radix;
+	/**
+	 * Objeto de Shell que permite llamar a sus métodos y sus atributos
+	 */
 	private Shell shell;
+	/**
+	 * Objeto de ViewConsola que permite llamar a sus métodos y sus atributos
+	 */
 	private ViewConsola vista;
+	/**
+	 * Objeto de tipo long
+	 */
 	private long tiempoInicial;
+	/**
+	 * Objeto de tipo long
+	 */
 	private long tiempoFinal;
 
+	/**
+	 * Método Constructor de la clase Controller
+	 */
 	public Controller() {
 		shell=new Shell();
 		radix=new Radix();
@@ -26,12 +57,20 @@ public class Controller {
 		funcionar();
 	}
 
+	/**
+	 * Método funcionar de la clase Controller
+	 */
 	public void funcionar() {
 		try {
+			//Mostrar menú de opciones
 			vista.mostrarMensaje("Algortimos de Ordenamiento\nIngrese el nùmero del algoritmo a utilizar:");
+			//Leer algortimo seleccionado
 			int algoritmo = vista.leerNum("1.Burbuja	2.Radix 	3.Quicksort 	4.Shell");
+			//Leer cantidad de datos seleccionada
 			int datos = vista.leerNum("Ingrese la cantidad de datos a ordenar\n1. 4 mil 	2. 40 mil 	3. 400 mil 	4. 4 millones 	5. 40 millones");
+			//Leer que caso se quiere evaluar
 			int caso = vista.leerNum("Ingrese que caso quiere evaluar\n1. Mejor caso	2. Caso medio	3.Peor caso");
+			//Generar Arreglo con los datos ingresados
 			switch (datos) {
 				case 1:
 					manArrays.generarArreglo(4000, caso);
@@ -51,6 +90,7 @@ public class Controller {
 				default:
 					throw new InputMismatchException();
 			}
+			//Ejecución del algortimo de ordenamiento seleccionado
 			switch (algoritmo) {
 				case 1:
 					vista.mostrarMensaje("Empieza el ordenamiento...");

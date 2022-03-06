@@ -1,9 +1,21 @@
 package co.edu.unbosque.model;
 
+/**
+ * Clase Shell, consta del método constructor y de un método ordenar
+ * Implementación del Algortimo Shell
+ * @author David Real
+ * @author Yilber Rojas
+ */
 public class Shell {
-    public Shell(){
-    }
+    /**
+     * Método Constructor de la clase Shell
+     */
+    public Shell(){}
 
+    /**
+     * Método ordenar de la clase Shell
+     * @param arreglo Array con objetos de tipo long
+     */
     public void ordenar(long[] arreglo){
         int salto=0 , i=0;
         long temp=0;

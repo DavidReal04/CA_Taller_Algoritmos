@@ -1,9 +1,22 @@
 package co.edu.unbosque.model;
 
+/**
+ * Clase Radix, consta del método constructor y de un método ordenar
+ * Implementación del Algortimo Radix
+ * @author David Real
+ * @author Yilber Rojas
+ */
 public class Radix {
-
+    /**
+     * Método constructor de la clase Radix
+     */
     public Radix(){}
 
+    /**
+     * Método ordenar de la clase Radix
+     * @param arreglo Array con objetos de tipo long
+     * @param tam Un int que contiene el tamaño del arreglo
+     */
     public void ordenar(long[] arreglo, int tam) {
         int i;
         int m=0;

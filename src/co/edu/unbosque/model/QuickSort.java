@@ -1,10 +1,22 @@
 package co.edu.unbosque.model;
-
+/**
+ * Clase QuickSort, consta del método constructor y de un método ordenar
+ * Implementación del Algortimo Shell
+ * @author David Real
+ * @author Yilber Rojas
+ */
 public class QuickSort {
+    /**
+     * Método Constuctor de la clase QuickSort
+     */
+    public QuickSort() {}
 
-    public QuickSort() {
-    }
-
+    /**
+     * Método ordenar de la clase QuickSort
+     * @param arreglo Array con objetos de tipo long
+     * @param izq Inicio del arreglo
+     * @param der Fin del arreglo
+     */
     public void ordenar(long[] arreglo, int izq, int der){
         long mitad = arreglo[(izq+der)/2];
         long aux;

@@ -1,13 +1,26 @@
 package co.edu.unbosque.model;
-
+/**
+ * Clase ManejoArreglos, consta del método constructor, de un método generarArreglo y Getters/Setters
+ * Generar arreglos según las condiciones dadas
+ * @author David Real
+ * @author Yilber Rojas
+ */
 public class ManejoArreglos {
-
+    /**
+     * Arreglo con objetos de tipo long
+     */
     private long[] arreglo;
 
-    public ManejoArreglos() {
+    /**
+     * Método constructor de la clase ManejoArreglos
+     */
+    public ManejoArreglos() {}
 
-    }
-
+    /**
+     * Método generarArreglo de la clase ManejoArreglos
+     * @param cantDatos Int con la cantidad de datos del arreglo a generar
+     * @param caso Int con el caso que indica el orden de los elementos del arreglo
+     */
     public void generarArreglo(int cantDatos, int caso){
         arreglo = new long[cantDatos];
         if(caso==1){
@@ -25,7 +38,7 @@ public class ManejoArreglos {
             }
         }
     }
-
+    //Getters-Setters
     public long[] getArreglo() {
         return arreglo;
     }
